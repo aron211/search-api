@@ -25,7 +25,6 @@ export class InventoryController {
   }
   @Get('search')
   async searchInventory(@Query('keywords') keywords: string): Promise<Inventory[]> {
-      console.log('Keywords:', keywords);
       const keywordArray = keywords.split(' '); // Divide las palabras clave
       return await this.inventoryService.searchInventory(keywordArray);
   }
